@@ -1,5 +1,5 @@
 # Vittorio
-An artillery duel clone for the C64 in compiled BASIC. 
+An artillery duel clone for the Commodore 64/C64 in compiled BASIC. 
 
 The game is written entirely in BASIC. It will run in the interpreter, but very slowly. The build script in build compiles it using the MOSpeed BASIC compiler: https://github.com/EgonOlsen71/basicv2
 
