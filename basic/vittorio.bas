@@ -601,6 +601,7 @@
 63690 data "bloody hell!"
 
 63700 rem title song by jim vogel
+63705 rem > the c64 music book <
 63720 poke si+24,15
 63730 poke si+5,9:poke si+6,0
 63735 poke si+12,26:poke si+13,36
