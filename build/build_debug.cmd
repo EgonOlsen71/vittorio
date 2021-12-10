@@ -1,0 +1,1 @@
+call mospeed ..\basic\vittorio.bas -target=vittorio.prg -generatesrc=true
