@@ -93,10 +93,10 @@
 48150 return
 
 48500 rem get color
-48510 if yy>22 then cc=3:return
-48520 if yy>18 then cc=2:return
-48530 if yy>14 then cc=1:return
-48540 cc=0:return
+48510 if yy%>22 then cc%=3:return
+48520 if yy%>18 then cc%=2:return
+48530 if yy%>14 then cc%=1:return
+48540 cc%=0:return
 
 48600 rem init sprite
 48610 poke 56334,peek(56334) and 254:poke 1,peek(1) and 251
@@ -121,26 +121,26 @@
 49100 return
 
 50000 rem render mountain
-50010 x=rnd(0):sc=233:ec=223
-50020 x=int(2+rnd(1)*35):y=18-int(rnd(1)*8)
-50030 sa=1024+x+y*40:se=sa+1:xe=x+1
-50035 if peek(sa)<>32 or peek(se)<>32 then 50020
-50037 yy=y:gosub 48500
-50040 for yp=y to 24:pa=peek(sa):pe=peek(se):cf=ci%(cc)
-50050 if pa<>160 and pa<>223 then poke sa,sc:goto 50055
-50052 poke sa,160
-50055 if pe<>160 and pe<>233 then poke se,ec:goto 50060
-50057 poke se,160
-50060 poke sa+54272,cf:poke se+54272,cf
-50070 if se-sa=1 then 50100
-50080 for wp=sa+1 to se-1:poke wp,160
-50090 poke wp+54272,cf:next wp
-50100 x=x-1:if x>=0 then sa=sa-1:goto 50120
-50110 sc=160
-50120 xe=xe+1:if xe<=39 then se=se+1:goto 50140
-50130 ec=160
-50140 sa=sa+40:se=se+40
-50150 yy=yp+1:gosub 48500
+50010 x%=rnd(0):sc%=233:ec%=223
+50020 x%=2+rnd(1)*35:y%=18-rnd(1)*8
+50030 sa%=1024+x%+y%*40:se%=sa%+1:xe%=x%+1
+50035 if peek(sa%)<>32 or peek(se%)<>32 then 50020
+50037 yy%=y%:gosub 48500
+50040 for yp=y% to 24:pa%=peek(sa%):pe%=peek(se%):cf%=ci%(cc%)
+50050 if pa%<>160 and pa%<>223 then poke sa%,sc%:goto 50055
+50052 poke sa%,160
+50055 if pe%<>160 and pe%<>233 then poke se%,ec%:goto 50060
+50057 poke se%,160
+50060 poke sa%+54272,cf%:poke se%+54272,cf%
+50070 if se%-sa%=1 then 50100
+50080 for wp=sa%+1 to se%-1:poke wp,160
+50090 poke wp+54272,cf%:next wp
+50100 x%=x%-1:if x%>=0 then sa%=sa%-1:goto 50120
+50110 sc%=160
+50120 xe%=xe%+1:if xe%<=39 then se%=se%+1:goto 50140
+50130 ec%=160
+50140 sa%=sa%+40:se%=se%+40
+50150 yy%=yp+1:gosub 48500
 50160 next yp:return
 
 51000 rem setup player
@@ -159,8 +159,8 @@
 52050 py(pn)=y-1:y=y+1:sa=sa+40
 52060 for yp=y to 24
 52070 poke sa,160:poke sa+1,160
-52080 yy=yp:gosub 48500
-52100 poke sa+54272,ci%(cc):poke sa+54272+1,ci%(cc)
+52080 yy%=yp:gosub 48500
+52100 poke sa+54272,ci%(cc%):poke sa+54272+1,ci%(cc%)
 52110 sa=sa+40
 52120 next yp
 
