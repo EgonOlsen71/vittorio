@@ -1,1 +1,1 @@
-call mospeed ..\basic\vittorio.bas -target=vittorio.prg -generatesrc=true
+call mospeed ..\basic\vittorio.bas -target=vittorio.prg -generatesrc=true -memhole=16192-16383

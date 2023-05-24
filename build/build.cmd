@@ -1,1 +1,1 @@
-call mospeed ..\basic\vittorio.bas -target=vittorio.prg -compression=true
+call mospeed ..\basic\vittorio.bas -target=vittorio.prg -compression=true -memhole=16192-16383
